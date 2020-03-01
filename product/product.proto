@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package nes.protos;
+package product;
 
 message Product {
     string id = 1;
