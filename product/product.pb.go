@@ -20,10 +20,220 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type Status int32
+
+const (
+	Status_AVAILABLE   Status = 0
+	Status_UNAVAILABLE Status = 1
+	Status_REMOVED     Status = 2
+)
+
+var Status_name = map[int32]string{
+	0: "AVAILABLE",
+	1: "UNAVAILABLE",
+	2: "REMOVED",
+}
+
+var Status_value = map[string]int32{
+	"AVAILABLE":   0,
+	"UNAVAILABLE": 1,
+	"REMOVED":     2,
+}
+
+func (x Status) String() string {
+	return proto.EnumName(Status_name, int32(x))
+}
+
+func (Status) EnumDescriptor() ([]byte, []int) {
+	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{0}
+}
+
+type Spec struct {
+	Attr                 string   `protobuf:"bytes,1,opt,name=Attr,proto3" json:"Attr,omitempty"`
+	Value                string   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Spec) Reset()         { *m = Spec{} }
+func (m *Spec) String() string { return proto.CompactTextString(m) }
+func (*Spec) ProtoMessage()    {}
+func (*Spec) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{0}
+}
+
+func (m *Spec) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Spec.Unmarshal(m, b)
+}
+func (m *Spec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Spec.Marshal(b, m, deterministic)
+}
+func (m *Spec) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Spec.Merge(m, src)
+}
+func (m *Spec) XXX_Size() int {
+	return xxx_messageInfo_Spec.Size(m)
+}
+func (m *Spec) XXX_DiscardUnknown() {
+	xxx_messageInfo_Spec.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Spec proto.InternalMessageInfo
+
+func (m *Spec) GetAttr() string {
+	if m != nil {
+		return m.Attr
+	}
+	return ""
+}
+
+func (m *Spec) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+type Tag struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Value                string   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Tag) Reset()         { *m = Tag{} }
+func (m *Tag) String() string { return proto.CompactTextString(m) }
+func (*Tag) ProtoMessage()    {}
+func (*Tag) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{1}
+}
+
+func (m *Tag) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Tag.Unmarshal(m, b)
+}
+func (m *Tag) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Tag.Marshal(b, m, deterministic)
+}
+func (m *Tag) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Tag.Merge(m, src)
+}
+func (m *Tag) XXX_Size() int {
+	return xxx_messageInfo_Tag.Size(m)
+}
+func (m *Tag) XXX_DiscardUnknown() {
+	xxx_messageInfo_Tag.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Tag proto.InternalMessageInfo
+
+func (m *Tag) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+func (m *Tag) GetValue() string {
+	if m != nil {
+		return m.Value
+	}
+	return ""
+}
+
+type Sku struct {
+	Sku                  string   `protobuf:"bytes,1,opt,name=sku,proto3" json:"sku,omitempty"`
+	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Price                float32  `protobuf:"fixed32,3,opt,name=price,proto3" json:"price,omitempty"`
+	OldPrice             float32  `protobuf:"fixed32,4,opt,name=old_price,json=oldPrice,proto3" json:"old_price,omitempty"`
+	Specs                []*Spec  `protobuf:"bytes,5,rep,name=specs,proto3" json:"specs,omitempty"`
+	Tags                 []*Tag   `protobuf:"bytes,6,rep,name=tags,proto3" json:"tags,omitempty"`
+	Status               Status   `protobuf:"varint,7,opt,name=status,proto3,enum=product.Status" json:"status,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Sku) Reset()         { *m = Sku{} }
+func (m *Sku) String() string { return proto.CompactTextString(m) }
+func (*Sku) ProtoMessage()    {}
+func (*Sku) Descriptor() ([]byte, []int) {
+	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{2}
+}
+
+func (m *Sku) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Sku.Unmarshal(m, b)
+}
+func (m *Sku) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Sku.Marshal(b, m, deterministic)
+}
+func (m *Sku) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Sku.Merge(m, src)
+}
+func (m *Sku) XXX_Size() int {
+	return xxx_messageInfo_Sku.Size(m)
+}
+func (m *Sku) XXX_DiscardUnknown() {
+	xxx_messageInfo_Sku.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Sku proto.InternalMessageInfo
+
+func (m *Sku) GetSku() string {
+	if m != nil {
+		return m.Sku
+	}
+	return ""
+}
+
+func (m *Sku) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+func (m *Sku) GetPrice() float32 {
+	if m != nil {
+		return m.Price
+	}
+	return 0
+}
+
+func (m *Sku) GetOldPrice() float32 {
+	if m != nil {
+		return m.OldPrice
+	}
+	return 0
+}
+
+func (m *Sku) GetSpecs() []*Spec {
+	if m != nil {
+		return m.Specs
+	}
+	return nil
+}
+
+func (m *Sku) GetTags() []*Tag {
+	if m != nil {
+		return m.Tags
+	}
+	return nil
+}
+
+func (m *Sku) GetStatus() Status {
+	if m != nil {
+		return m.Status
+	}
+	return Status_AVAILABLE
+}
+
 type Product struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name                 string   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Description          string   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Skus                 []*Sku   `protobuf:"bytes,4,rep,name=skus,proto3" json:"skus,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -33,7 +243,7 @@ func (m *Product) Reset()         { *m = Product{} }
 func (m *Product) String() string { return proto.CompactTextString(m) }
 func (*Product) ProtoMessage()    {}
 func (*Product) Descriptor() ([]byte, []int) {
-	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{0}
+	return fileDescriptor_5f9f5dc4dd6fa6d7, []int{3}
 }
 
 func (m *Product) XXX_Unmarshal(b []byte) error {
@@ -75,19 +285,43 @@ func (m *Product) GetDescription() string {
 	return ""
 }
 
+func (m *Product) GetSkus() []*Sku {
+	if m != nil {
+		return m.Skus
+	}
+	return nil
+}
+
 func init() {
+	proto.RegisterEnum("product.Status", Status_name, Status_value)
+	proto.RegisterType((*Spec)(nil), "product.Spec")
+	proto.RegisterType((*Tag)(nil), "product.Tag")
+	proto.RegisterType((*Sku)(nil), "product.Sku")
 	proto.RegisterType((*Product)(nil), "product.Product")
 }
 
 func init() { proto.RegisterFile("product/product.proto", fileDescriptor_5f9f5dc4dd6fa6d7) }
 
 var fileDescriptor_5f9f5dc4dd6fa6d7 = []byte{
-	// 108 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2d, 0x28, 0xca, 0x4f,
-	0x29, 0x4d, 0x2e, 0xd1, 0x87, 0xd2, 0x7a, 0x05, 0x45, 0xf9, 0x25, 0xf9, 0x42, 0xec, 0x50, 0xae,
-	0x92, 0x3f, 0x17, 0x7b, 0x00, 0x84, 0x29, 0xc4, 0xc7, 0xc5, 0x94, 0x99, 0x22, 0xc1, 0xa8, 0xc0,
-	0xa8, 0xc1, 0x19, 0xc4, 0x94, 0x99, 0x22, 0x24, 0xc4, 0xc5, 0x92, 0x97, 0x98, 0x9b, 0x2a, 0xc1,
-	0x04, 0x16, 0x01, 0xb3, 0x85, 0x14, 0xb8, 0xb8, 0x53, 0x52, 0x8b, 0x93, 0x8b, 0x32, 0x0b, 0x4a,
-	0x32, 0xf3, 0xf3, 0x24, 0x98, 0xc1, 0x52, 0xc8, 0x42, 0x49, 0x6c, 0x60, 0x0b, 0x8c, 0x01, 0x01,
-	0x00, 0x00, 0xff, 0xff, 0x06, 0xec, 0xd8, 0xfa, 0x79, 0x00, 0x00, 0x00,
+	// 319 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x91, 0x5d, 0x4b, 0xc3, 0x30,
+	0x14, 0x86, 0xed, 0xc7, 0x5a, 0x7b, 0xea, 0x3e, 0x38, 0x28, 0x04, 0xbc, 0x29, 0xf3, 0xc2, 0xa2,
+	0x30, 0x65, 0xe2, 0x0f, 0xa8, 0xb8, 0x0b, 0x61, 0xea, 0xc8, 0xe6, 0x6e, 0xa5, 0xb6, 0x65, 0x94,
+	0xce, 0x25, 0x36, 0x89, 0x3f, 0xd3, 0xdf, 0x24, 0x4d, 0x3a, 0x27, 0x7e, 0x5c, 0xe5, 0x9c, 0xf7,
+	0x79, 0x39, 0x39, 0x6f, 0x02, 0x47, 0xbc, 0x66, 0xb9, 0xca, 0xe4, 0x45, 0x7b, 0x8e, 0x78, 0xcd,
+	0x24, 0x43, 0xbf, 0x6d, 0x87, 0x97, 0xe0, 0xce, 0x79, 0x91, 0x21, 0x82, 0x9b, 0x48, 0x59, 0x13,
+	0x2b, 0xb2, 0xe2, 0x80, 0xea, 0x1a, 0x0f, 0xa1, 0xf3, 0x9e, 0xae, 0x55, 0x41, 0x6c, 0x2d, 0x9a,
+	0x66, 0x78, 0x0e, 0xce, 0x22, 0x5d, 0x61, 0x0f, 0xec, 0x32, 0x6f, 0xed, 0x76, 0x99, 0xff, 0x63,
+	0xfe, 0xb0, 0xc0, 0x99, 0x57, 0x0a, 0x07, 0xe0, 0x88, 0x4a, 0xb5, 0xf6, 0xa6, 0x6c, 0x2e, 0xdc,
+	0xa4, 0xaf, 0x5b, 0xbb, 0xae, 0x9b, 0x19, 0xbc, 0x2e, 0xb3, 0x82, 0x38, 0x91, 0x15, 0xdb, 0xd4,
+	0x34, 0x78, 0x0c, 0x01, 0x5b, 0xe7, 0xcf, 0x86, 0xb8, 0x9a, 0xec, 0xb3, 0x75, 0x3e, 0xd3, 0xf0,
+	0x04, 0x3a, 0x82, 0x17, 0x99, 0x20, 0x9d, 0xc8, 0x89, 0xc3, 0x71, 0x77, 0xb4, 0xcd, 0xd9, 0xa4,
+	0xa2, 0x86, 0x61, 0x04, 0xae, 0x4c, 0x57, 0x82, 0x78, 0xda, 0x73, 0xf0, 0xe5, 0x59, 0xa4, 0x2b,
+	0xaa, 0x09, 0x9e, 0x82, 0x27, 0x64, 0x2a, 0x95, 0x20, 0x7e, 0x64, 0xc5, 0xbd, 0x71, 0x7f, 0x37,
+	0x47, 0xcb, 0xb4, 0xc5, 0xc3, 0x37, 0xf0, 0x67, 0x86, 0xfc, 0x7a, 0x81, 0xbf, 0x12, 0x45, 0x10,
+	0xe6, 0x85, 0xc8, 0xea, 0x92, 0xcb, 0x92, 0x6d, 0x74, 0xae, 0x80, 0x7e, 0x97, 0x9a, 0xdd, 0x44,
+	0xa5, 0x04, 0x71, 0x7f, 0xec, 0x36, 0xaf, 0x14, 0xd5, 0xe4, 0xec, 0x1a, 0x3c, 0xb3, 0x04, 0x76,
+	0x21, 0x48, 0x96, 0xc9, 0xdd, 0x34, 0xb9, 0x99, 0x4e, 0x06, 0x7b, 0xd8, 0x87, 0xf0, 0xe9, 0x61,
+	0x27, 0x58, 0x18, 0x82, 0x4f, 0x27, 0xf7, 0x8f, 0xcb, 0xc9, 0xed, 0xc0, 0x7e, 0xf1, 0xf4, 0x4f,
+	0x5f, 0x7d, 0x06, 0x00, 0x00, 0xff, 0xff, 0x9a, 0x47, 0x94, 0xea, 0x02, 0x02, 0x00, 0x00,
 }

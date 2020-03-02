@@ -2,8 +2,35 @@ syntax = "proto3";
 
 package product;
 
+enum Status {
+    AVAILABLE   = 0;
+    UNAVAILABLE = 1;
+	REMOVED     = 2;
+}
+
+message Spec  {
+	string Attr = 1;
+	string value = 2;
+}
+
+message Tag {
+	string id = 1;
+	string value = 2;
+}
+
+message Sku {
+	string sku = 1;
+    string name = 2;
+    float price = 3;
+    float old_price = 4;
+    repeated Spec specs = 5;
+    repeated Tag tags = 6;
+    Status status = 7;
+}
+
 message Product {
     string id = 1;
     string name = 2;
     string description = 3;
+    repeated Sku skus = 4;
 }
