@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package sortType;
+
+enum Type {
+    CORE = 0;
+    CUSTOM = 1;
+}
+
+enum Order {
+    ASC = 0;
+    DESC = 1;
+}
+
+enum Sort {
+    RELEVANCE = 0;
+    DISCOUNT = 1;
+    PRICE = 2;
+    REVIEW = 3;
+    SALE = 4;
+    DISTANCE = 5;
+}
+
+message SortType {
+    Type type = 1;
+    Order order = 2;
+    Sort sort = 3;
+}

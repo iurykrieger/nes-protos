@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package querySuggestion;
+
+enum FilterType {
+    SINGLE = 0;
+    RANGE = 1;
+}
+
+message RangeValue {
+    float start = 1;
+    float end = 2;
+}
+
+message FilterItem {
+    oneof value {
+        string label = 1;
+        RangeValue range = 2;
+    }
+    map<string, FilterItem> items = 3;
+}
+
+message Filter {
+    string id = 1;
+    string attribute = 2;
+    string label = 3;
+    FilterType type = 4;
+    map<string, FilterItem> items = 5;
+}

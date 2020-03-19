@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package querySuggestion;
+
+message QuerySuggestion {
+    string query = 1;
+}
