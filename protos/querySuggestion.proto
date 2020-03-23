@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package protos;
+
+option go_package = "github.com/iurykrieger/nes-protos/protos";
+
+message QuerySuggestion {
+    string query = 1;
+}

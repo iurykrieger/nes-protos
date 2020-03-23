@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package querySuggestion;
+package protos;
+
+option go_package = "github.com/iurykrieger/nes-protos/protos";
 
 enum FilterType {
     SINGLE = 0;
