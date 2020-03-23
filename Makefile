@@ -1,17 +1,16 @@
 
 GOPATH:=$(shell go env GOPATH)
 
-PROTO_PATH=/go/src/github.com/iurykrieger/nes-protos/protos
+WORKDIR=/go/src/github.com/iurykrieger/nes-protos
 
 .PHONY: proto
 proto: build 
 	docker run \
-		-v ${PWD}/protos:${PROTO_PATH} \
+		-v ${PWD}:${WORKDIR} \
 		nes-protos \
 		protoc \
-		--proto_path=${PROTO_PATH}/src:. \
-		--go_out=. \
-		--go_opt=paths=source_relative \
+		--proto_path=${WORKDIR} \
+		--go_out=/go/src \
 		--micro_out=/go/src \
 		protos/*.proto
 
