@@ -15,5 +15,5 @@ proto: build
 		protos/*.proto
 
 .PHONY: build
-build: proto
+build:
 	docker build -t nes-protos .

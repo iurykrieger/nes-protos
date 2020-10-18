@@ -34,9 +34,7 @@ RUN ./configure --prefix=/usr; \
 WORKDIR /go/src/github.com/iurykrieger/nes-protos
 
 COPY go.mod .
+COPY go.sum .
 
-# Install protobuf Golang generator plugin
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go
-
-# Install protobuf Golang Micro generator plugin (https://github.com/micro/protoc-gen-micro)
-RUN go install github.com/micro/protoc-gen-micro/v2
+RUN go install github.com/micro/micro/v3/cmd/protoc-gen-micro
