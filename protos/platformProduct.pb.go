@@ -136,53 +136,6 @@ func (x *PlatformSpec) GetLabel() string {
 	return ""
 }
 
-type PlatformSpecList struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Specs []*PlatformSpec `protobuf:"bytes,1,rep,name=specs,proto3" json:"specs,omitempty"`
-}
-
-func (x *PlatformSpecList) Reset() {
-	*x = PlatformSpecList{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PlatformSpecList) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PlatformSpecList) ProtoMessage() {}
-
-func (x *PlatformSpecList) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PlatformSpecList.ProtoReflect.Descriptor instead.
-func (*PlatformSpecList) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *PlatformSpecList) GetSpecs() []*PlatformSpec {
-	if x != nil {
-		return x.Specs
-	}
-	return nil
-}
-
 type PlatformInstallment struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -195,7 +148,7 @@ type PlatformInstallment struct {
 func (x *PlatformInstallment) Reset() {
 	*x = PlatformInstallment{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[3]
+		mi := &file_protos_platformProduct_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -208,7 +161,7 @@ func (x *PlatformInstallment) String() string {
 func (*PlatformInstallment) ProtoMessage() {}
 
 func (x *PlatformInstallment) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[3]
+	mi := &file_protos_platformProduct_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -221,7 +174,7 @@ func (x *PlatformInstallment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlatformInstallment.ProtoReflect.Descriptor instead.
 func (*PlatformInstallment) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{3}
+	return file_protos_platformProduct_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *PlatformInstallment) GetCount() int32 {
@@ -255,7 +208,7 @@ type PlatformSkuProperties struct {
 func (x *PlatformSkuProperties) Reset() {
 	*x = PlatformSkuProperties{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[4]
+		mi := &file_protos_platformProduct_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -268,7 +221,7 @@ func (x *PlatformSkuProperties) String() string {
 func (*PlatformSkuProperties) ProtoMessage() {}
 
 func (x *PlatformSkuProperties) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[4]
+	mi := &file_protos_platformProduct_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -281,7 +234,7 @@ func (x *PlatformSkuProperties) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlatformSkuProperties.ProtoReflect.Descriptor instead.
 func (*PlatformSkuProperties) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{4}
+	return file_protos_platformProduct_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *PlatformSkuProperties) GetUrl() string {
@@ -346,7 +299,7 @@ type PlatformSku struct {
 func (x *PlatformSku) Reset() {
 	*x = PlatformSku{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[5]
+		mi := &file_protos_platformProduct_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -359,7 +312,7 @@ func (x *PlatformSku) String() string {
 func (*PlatformSku) ProtoMessage() {}
 
 func (x *PlatformSku) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[5]
+	mi := &file_protos_platformProduct_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -372,7 +325,7 @@ func (x *PlatformSku) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlatformSku.ProtoReflect.Descriptor instead.
 func (*PlatformSku) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{5}
+	return file_protos_platformProduct_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *PlatformSku) GetSku() string {
@@ -409,7 +362,7 @@ type PlatformCategory struct {
 func (x *PlatformCategory) Reset() {
 	*x = PlatformCategory{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[6]
+		mi := &file_protos_platformProduct_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +375,7 @@ func (x *PlatformCategory) String() string {
 func (*PlatformCategory) ProtoMessage() {}
 
 func (x *PlatformCategory) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[6]
+	mi := &file_protos_platformProduct_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +388,7 @@ func (x *PlatformCategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlatformCategory.ProtoReflect.Descriptor instead.
 func (*PlatformCategory) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{6}
+	return file_protos_platformProduct_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PlatformCategory) GetId() string {
@@ -485,7 +438,7 @@ type PlatformProduct struct {
 func (x *PlatformProduct) Reset() {
 	*x = PlatformProduct{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_platformProduct_proto_msgTypes[7]
+		mi := &file_protos_platformProduct_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -498,7 +451,7 @@ func (x *PlatformProduct) String() string {
 func (*PlatformProduct) ProtoMessage() {}
 
 func (x *PlatformProduct) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_platformProduct_proto_msgTypes[7]
+	mi := &file_protos_platformProduct_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -511,7 +464,7 @@ func (x *PlatformProduct) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlatformProduct.ProtoReflect.Descriptor instead.
 func (*PlatformProduct) Descriptor() ([]byte, []int) {
-	return file_protos_platformProduct_proto_rawDescGZIP(), []int{7}
+	return file_protos_platformProduct_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PlatformProduct) GetId() string {
@@ -639,11 +592,7 @@ var file_protos_platformProduct_proto_rawDesc = []byte{
 	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x34, 0x0a, 0x0c, 0x50, 0x6c, 0x61, 0x74, 0x66,
 	0x6f, 0x72, 0x6d, 0x53, 0x70, 0x65, 0x63, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x22, 0x3e, 0x0a,
-	0x10, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x70, 0x65, 0x63, 0x4c, 0x69, 0x73,
-	0x74, 0x12, 0x2a, 0x0a, 0x05, 0x73, 0x70, 0x65, 0x63, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x14, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2e, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f,
-	0x72, 0x6d, 0x53, 0x70, 0x65, 0x63, 0x52, 0x05, 0x73, 0x70, 0x65, 0x63, 0x73, 0x22, 0x41, 0x0a,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x22, 0x41, 0x0a,
 	0x13, 0x50, 0x6c, 0x61, 0x74, 0x66, 0x6f, 0x72, 0x6d, 0x49, 0x6e, 0x73, 0x74, 0x61, 0x6c, 0x6c,
 	0x6d, 0x65, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x05, 0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x70, 0x72,
@@ -751,42 +700,40 @@ func file_protos_platformProduct_proto_rawDescGZIP() []byte {
 	return file_protos_platformProduct_proto_rawDescData
 }
 
-var file_protos_platformProduct_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_protos_platformProduct_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_protos_platformProduct_proto_goTypes = []interface{}{
 	(*PlatformTag)(nil),           // 0: protos.PlatformTag
 	(*PlatformSpec)(nil),          // 1: protos.PlatformSpec
-	(*PlatformSpecList)(nil),      // 2: protos.PlatformSpecList
-	(*PlatformInstallment)(nil),   // 3: protos.PlatformInstallment
-	(*PlatformSkuProperties)(nil), // 4: protos.PlatformSkuProperties
-	(*PlatformSku)(nil),           // 5: protos.PlatformSku
-	(*PlatformCategory)(nil),      // 6: protos.PlatformCategory
-	(*PlatformProduct)(nil),       // 7: protos.PlatformProduct
-	nil,                           // 8: protos.PlatformSku.SpecsEntry
-	nil,                           // 9: protos.PlatformProduct.ImagesEntry
-	nil,                           // 10: protos.PlatformProduct.SpecsEntry
-	nil,                           // 11: protos.PlatformProduct.DetailsEntry
-	(*_struct.ListValue)(nil),     // 12: google.protobuf.ListValue
-	(*_struct.Value)(nil),         // 13: google.protobuf.Value
+	(*PlatformInstallment)(nil),   // 2: protos.PlatformInstallment
+	(*PlatformSkuProperties)(nil), // 3: protos.PlatformSkuProperties
+	(*PlatformSku)(nil),           // 4: protos.PlatformSku
+	(*PlatformCategory)(nil),      // 5: protos.PlatformCategory
+	(*PlatformProduct)(nil),       // 6: protos.PlatformProduct
+	nil,                           // 7: protos.PlatformSku.SpecsEntry
+	nil,                           // 8: protos.PlatformProduct.ImagesEntry
+	nil,                           // 9: protos.PlatformProduct.SpecsEntry
+	nil,                           // 10: protos.PlatformProduct.DetailsEntry
+	(*_struct.ListValue)(nil),     // 11: google.protobuf.ListValue
+	(*_struct.Value)(nil),         // 12: google.protobuf.Value
 }
 var file_protos_platformProduct_proto_depIdxs = []int32{
-	1,  // 0: protos.PlatformSpecList.specs:type_name -> protos.PlatformSpec
-	3,  // 1: protos.PlatformSkuProperties.installment:type_name -> protos.PlatformInstallment
-	4,  // 2: protos.PlatformSku.properties:type_name -> protos.PlatformSkuProperties
-	8,  // 3: protos.PlatformSku.specs:type_name -> protos.PlatformSku.SpecsEntry
-	9,  // 4: protos.PlatformProduct.images:type_name -> protos.PlatformProduct.ImagesEntry
-	5,  // 5: protos.PlatformProduct.skus:type_name -> protos.PlatformSku
-	0,  // 6: protos.PlatformProduct.tags:type_name -> protos.PlatformTag
-	3,  // 7: protos.PlatformProduct.installment:type_name -> protos.PlatformInstallment
-	10, // 8: protos.PlatformProduct.specs:type_name -> protos.PlatformProduct.SpecsEntry
-	6,  // 9: protos.PlatformProduct.categories:type_name -> protos.PlatformCategory
-	11, // 10: protos.PlatformProduct.details:type_name -> protos.PlatformProduct.DetailsEntry
-	12, // 11: protos.PlatformProduct.SpecsEntry.value:type_name -> google.protobuf.ListValue
-	13, // 12: protos.PlatformProduct.DetailsEntry.value:type_name -> google.protobuf.Value
-	13, // [13:13] is the sub-list for method output_type
-	13, // [13:13] is the sub-list for method input_type
-	13, // [13:13] is the sub-list for extension type_name
-	13, // [13:13] is the sub-list for extension extendee
-	0,  // [0:13] is the sub-list for field type_name
+	2,  // 0: protos.PlatformSkuProperties.installment:type_name -> protos.PlatformInstallment
+	3,  // 1: protos.PlatformSku.properties:type_name -> protos.PlatformSkuProperties
+	7,  // 2: protos.PlatformSku.specs:type_name -> protos.PlatformSku.SpecsEntry
+	8,  // 3: protos.PlatformProduct.images:type_name -> protos.PlatformProduct.ImagesEntry
+	4,  // 4: protos.PlatformProduct.skus:type_name -> protos.PlatformSku
+	0,  // 5: protos.PlatformProduct.tags:type_name -> protos.PlatformTag
+	2,  // 6: protos.PlatformProduct.installment:type_name -> protos.PlatformInstallment
+	9,  // 7: protos.PlatformProduct.specs:type_name -> protos.PlatformProduct.SpecsEntry
+	5,  // 8: protos.PlatformProduct.categories:type_name -> protos.PlatformCategory
+	10, // 9: protos.PlatformProduct.details:type_name -> protos.PlatformProduct.DetailsEntry
+	11, // 10: protos.PlatformProduct.SpecsEntry.value:type_name -> google.protobuf.ListValue
+	12, // 11: protos.PlatformProduct.DetailsEntry.value:type_name -> google.protobuf.Value
+	12, // [12:12] is the sub-list for method output_type
+	12, // [12:12] is the sub-list for method input_type
+	12, // [12:12] is the sub-list for extension type_name
+	12, // [12:12] is the sub-list for extension extendee
+	0,  // [0:12] is the sub-list for field type_name
 }
 
 func init() { file_protos_platformProduct_proto_init() }
@@ -820,18 +767,6 @@ func file_protos_platformProduct_proto_init() {
 			}
 		}
 		file_protos_platformProduct_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PlatformSpecList); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_protos_platformProduct_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlatformInstallment); i {
 			case 0:
 				return &v.state
@@ -843,7 +778,7 @@ func file_protos_platformProduct_proto_init() {
 				return nil
 			}
 		}
-		file_protos_platformProduct_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_platformProduct_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlatformSkuProperties); i {
 			case 0:
 				return &v.state
@@ -855,7 +790,7 @@ func file_protos_platformProduct_proto_init() {
 				return nil
 			}
 		}
-		file_protos_platformProduct_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_platformProduct_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlatformSku); i {
 			case 0:
 				return &v.state
@@ -867,7 +802,7 @@ func file_protos_platformProduct_proto_init() {
 				return nil
 			}
 		}
-		file_protos_platformProduct_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_platformProduct_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlatformCategory); i {
 			case 0:
 				return &v.state
@@ -879,7 +814,7 @@ func file_protos_platformProduct_proto_init() {
 				return nil
 			}
 		}
-		file_protos_platformProduct_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_platformProduct_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PlatformProduct); i {
 			case 0:
 				return &v.state
@@ -898,7 +833,7 @@ func file_protos_platformProduct_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_protos_platformProduct_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   12,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
