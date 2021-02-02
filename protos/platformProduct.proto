@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package protos;
+
+import "google/protobuf/any.proto";
+
+option go_package = "github.com/iurykrieger/nes-protos/protos";
+
+message PlatformTag {
+	string id = 1;
+	string name = 2;
+}
+
+message PlatformSpec  {
+    string id = 1;
+    string label = 2;
+}
+
+message PlatformInstallment {
+    int32 count = 1;
+    float price = 2;
+}
+
+message PlatformSkuProperties {
+    string url = 1;
+    string status = 2;
+    float price = 3;
+    float old_price = 4;
+    PlatformInstallment installment = 5;
+    string ean_code = 6;
+    string volume = 7;
+}
+
+message PlatformSku {
+    string sku = 1;
+    PlatformSkuProperties properties = 2;
+    map<string, string> specs = 3;
+}
+
+message PlatformCategory {
+    string id = 1;
+    string name = 2;
+    repeated string parents = 3;
+}
+
+message PlatformProduct {
+    string id = 1;
+    string status = 2;
+    string name = 3;
+    string url = 4;
+    float price = 5;
+    float old_price = 6;
+    map<string, string> images = 7;
+    repeated PlatformSku skus = 8;
+    repeated PlatformTag tags = 9;
+    PlatformInstallment installment = 10;
+    map<string, PlatformSpec> specs = 11;
+    repeated PlatformCategory categories = 12;
+    map<string, google.protobuf.Any> details = 13;
+    string description = 14;
+    string ean_code = 15;
+    string brand = 16;
+}
