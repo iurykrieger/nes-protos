@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package protos;
 
-import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
 
 option go_package = "github.com/iurykrieger/nes-protos/protos";
 
@@ -14,6 +14,10 @@ message PlatformTag {
 message PlatformSpec  {
     string id = 1;
     string label = 2;
+}
+
+message PlatformSpecList {
+    repeated PlatformSpec specs = 1;
 }
 
 message PlatformInstallment {
@@ -54,9 +58,9 @@ message PlatformProduct {
     repeated PlatformSku skus = 8;
     repeated PlatformTag tags = 9;
     PlatformInstallment installment = 10;
-    map<string, PlatformSpec> specs = 11;
+    map<string, google.protobuf.ListValue> specs = 11;
     repeated PlatformCategory categories = 12;
-    map<string, google.protobuf.Any> details = 13;
+    map<string, google.protobuf.Value> details = 13;
     string description = 14;
     string ean_code = 15;
     string brand = 16;
