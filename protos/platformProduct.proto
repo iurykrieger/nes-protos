@@ -16,10 +16,6 @@ message PlatformSpec  {
     string label = 2;
 }
 
-message PlatformSpecList {
-    repeated PlatformSpec specs = 1;
-}
-
 message PlatformInstallment {
     int32 count = 1;
     float price = 2;
